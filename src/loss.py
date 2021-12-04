@@ -2,7 +2,7 @@ import tensorflow as tf
 from config import loss_fn, LAMBDA
 
 # Methods to find the error (loss) in data
-# This method is used to find how much does the generated image differ than the original 
+# This method is used to find how much does the generated image differ than the original
 def discriminator_loss(real, generated):
     real_loss = loss_fn(tf.ones_like(real), real)
     generated_loss = loss_fn(tf.zeros_like(generated), generated)
@@ -10,7 +10,7 @@ def discriminator_loss(real, generated):
     return total_loss * 0.5
 
 
-# This method is used to find the difference between generated images to true +ve 
+# This method is used to find the difference between generated images to true +ve
 def generator_loss(generated):
     return loss_fn(tf.ones_like(generated), generated)
 
